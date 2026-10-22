@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+class IdadeErro extends Exception {
+    public IdadeErro(String msg) {
+        super(msg);
+    }
+}
+
+public class LeIdadesComparativas {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.print("Digite sua idade: ");
+        int idade = sc.nextInt();
+        
+        try {
+            
+            if (idade < 0 || idade > 120) { 
+                throw new IdadeErro("Idade inválida!");
+            }
+            
+            System.out.println("Idade válida!");
+            
+        } catch (IdadeErro e) {
+            System.out.println("Erro: " + e.getMessage());
+        }
+    }
+}
