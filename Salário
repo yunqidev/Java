@@ -1,1 +1,19 @@
+public class SaldoInsuficienteException extends Exception {
+    private double saldoDisponivel;
+    private double valorSolicitado;
+
+    public SaldoInsuficienteException(double saldoDisponivel, double valorSolicitado) {
+        super("Saldo insuficiente! Disponível: R$ " + saldoDisponivel + ", Solicitado: R$ " + valorSolicitado);
+        this.saldoDisponivel = saldoDisponivel;
+        this.valorSolicitado = valorSolicitado;
+    }
+
+    public double getSaldoDisponivel() {
+        return saldoDisponivel;
+    }
+
+    public double getValorSolicitado() {
+        return valorSolicitado;
+    }
+}
 
